@@ -1,0 +1,4 @@
+title = "uwunix config"
+
+[disk]
+path = "disk1.uwunx"
