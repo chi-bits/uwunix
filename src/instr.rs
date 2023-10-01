@@ -28,4 +28,9 @@ pub enum instr {
 
     cmp,
     halt,
+
+    endi,
+    endfn,
 }
+
+

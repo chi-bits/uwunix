@@ -5,6 +5,7 @@ pub struct cpu {
     regs: [u8; 0xff],
     disk: disk::Disk,
     pc: u64,
+    instrbuf: Vec<u8>,
 }
 
 impl cpu {
@@ -19,6 +20,10 @@ impl cpu {
     fn init(&mut self) {
         self.disk.init();
         self.pc = 0;
+
+    }
+
+    fn clock(&mut self) {
 
     }
 }

@@ -32,6 +32,9 @@ fn ; thing im gonna try
 jmp
 call
 
+edi ; end instr
+edf ; end func
+
 ```
 
 ## functions
@@ -52,4 +55,30 @@ equality,
 greater than,
 less than,
 zero,
+parity,
+carry,
+sign,
+overflow,
+
+## opcodes
+
+```
+   00  01  02  03  04  05  06  07  08  09  0A  0B  0C  0D  0E  0F
+00 edi 
+10 edf
+20
+30
+40
+50
+60
+70
+80
+90
+A0
+B0
+C0
+D0
+E0
+F0
+```
 
