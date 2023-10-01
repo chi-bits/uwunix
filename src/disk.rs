@@ -1,6 +1,5 @@
 use std::fs::File;
 use std::io::{Read, Write};
-use toml::Table;
 
 #[path = "./config.rs"]
 mod config;
@@ -13,7 +12,7 @@ fn binfilewrite(file_path: &str, data: &[u8]) {
 
 
 fn binfileread(path: &str, buffer: &mut Vec<u8>) {
-    let mut f = File::open(path);
+    let f = File::open(path);
     f.expect("yay").read_to_end(buffer);
 }
 
@@ -60,5 +59,13 @@ impl Disk {
         }
 
         self.disk = buf;
+    }
+
+    pub fn read(&self, addr: u16) -> u8 {
+        return self.disk[addr as usize]
+    }
+
+    pub fn write(&mut self, addr: u16, val: u8) {
+        self.disk[addr as usize] = val;
     }
 }
