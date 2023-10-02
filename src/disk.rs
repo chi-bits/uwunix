@@ -38,25 +38,23 @@ impl Disk {
             .to_string();
 
         let mut buf: Vec<u8> = Vec::new();
+
         binfileread(
             self.path
                 .as_str()
                 .trim_end_matches('"')
                 .trim_start_matches('"'),
+
             &mut buf
         );
+
         self.disk = buf;
     }
 
     pub fn fill(&mut self) {
-        let zeroes: &[u8] = &[0xff; 0xffff];
-        binfilewrite(self.path.as_str(), zeroes);
+        let mut buf: Vec<u8> = vec![0xff; 0xffff];
 
-        let mut buf: Vec<u8> = Vec::new();
-
-        for i in zeroes {
-            buf.push(*i);
-        }
+        binfilewrite(self.path.as_str(), &buf[0..]);
 
         self.disk = buf;
     }

@@ -1,6 +1,7 @@
 use crate::disk::Disk;
 
-pub mod iocat;
+#[path ="./iocat.rs"]
+mod iocat;
 
 pub struct Cpu {
     regs: [u8; 0xff],
@@ -21,7 +22,7 @@ impl Cpu {
             pcbuf: 0,
             instrbuf: Vec::new(),
             ram: [0; 0xffff],
-            port: iocat::Port{
+            port: iocat::Port {
                 rw: false,
                 deviceaddr: 0x0000,
                 byte: 0x00,
@@ -46,6 +47,6 @@ impl Cpu {
     }
 
     fn clock(&mut self) {
-
+        
     }
 }

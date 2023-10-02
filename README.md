@@ -84,3 +84,15 @@ E0
 F0
 ```
 
+## memory thing
+so since this is fantasy and there is stupid shit theres not gonna be like specific parts that are like reserved for things ya know
+there are seperate instructions for ram and disk ya know
+but there are some parts that will be reserved in memory for things and stuff
+ok so
+```
+0xfffb-0xfffe - io port:
+   0xfffb: r/w
+   0xfffc-d: device addr
+   0xfffe: byte
+```
+ig i could add more ports but i dont wanna!!!!!!!

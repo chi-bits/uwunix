@@ -32,6 +32,25 @@ pub enum instr {
 
     endi,
     endfn,
+
+    byte, // not an instruction
+    // actually this enum is kinda misnamed but like
+    // blehhhh!!!!!!!
+}
+
+pub struct Token {
+    toktype: instr,
+    val: u8,
+}
+
+pub struct InstrLex {
+    out: Vec<Vec<Token>>,
+}
+
+impl InstrLex {
+    pub fn lex(inp: &[u8]) {
+
+    }
 }
 
 
