@@ -10,6 +10,8 @@ st ; store to ram (is that how things work?)
 write ; write to disk
 read ; read from disk
 swap ; swap regs
+ror ; rotate right
+rol ; rotate left
 
 ; math
 add
@@ -66,11 +68,11 @@ overflow,
    00  01  02  03  04  05  06  07  08  09  0A  0B  0C  0D  0E  0F
 00 edi 
 10 edf
-20
-30
-40
-50
-60
+20 ldi lda st  wrt rd  swp ror rol
+30 add sub mul div inc dec
+40 add or  xor not
+50 fnc cal jmp 
+60 cmp hlt
 70
 80
 90

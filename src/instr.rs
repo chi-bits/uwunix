@@ -5,6 +5,7 @@ pub enum instr {
     st,
     write,
     read,
+    swap,
     
     // math 
     add,

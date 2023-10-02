@@ -1,26 +1,48 @@
-mod disk;
-mod instr;
+use crate::disk::Disk;
 
-pub struct cpu {
+pub mod iocat;
+
+pub struct Cpu {
     regs: [u8; 0xff],
-    disk: disk::Disk,
+    disk: Disk,
     pc: u64,
+    pcbuf: u64,
     instrbuf: Vec<u8>,
+    ram: [u8; 0xffff],
+    port: iocat::Port,
 }
 
-impl cpu {
-    fn new() -> Self {
+impl Cpu {
+    pub fn new() -> Self {
         Self {
-            regs,
-            disk: disk::Disk::new(),
-            pc,
+            regs: [0; 0xff],
+            disk: Disk::new(),
+            pc: 0,
+            pcbuf: 0,
+            instrbuf: Vec::new(),
+            ram: [0; 0xffff],
+            port: iocat::Port{
+                rw: false,
+                deviceaddr: 0x0000,
+                byte: 0x00,
+            }
         }
     }
 
-    fn init(&mut self) {
+    pub fn init(&mut self) {
         self.disk.init();
         self.pc = 0;
+        
+        // for i in 0..self.regs.len() {
+        //     self.regs[i] = 0;
+        // }
+        //
+        // for i in 0..self.ram.len() {
+        //     self.ram[i] = 0;
+        // }
 
+
+        println!("PC: {}\nRegs{:?}", self.pc, self.regs);
     }
 
     fn clock(&mut self) {

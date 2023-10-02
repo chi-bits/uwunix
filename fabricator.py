@@ -43,13 +43,15 @@ class Token:
         self.val = val
 
     def __repr__(self):
-        return 
+        return f"Token({type}, {val})" 
 
 def lex(inp):
 
     for l in inp:
         instr = l.split(" ")[0]
-        # wait how tf am i gonna do this
+        
+        if instr == "ld":
+            
 
 
 if __name__ == "__main__":
