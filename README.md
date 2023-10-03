@@ -96,3 +96,22 @@ ok so
    0xfffe: byte
 ```
 ig i could add more ports but i dont wanna!!!!!!!
+
+# uwufs
+so like a disk needs a file system and shit right 
+so at school i just thought of the first thing i thought of:
+```
+1 block = 4 bytes
+
+~~~~~~~~~~~~~~~~
+[Header section]
+   [filename] 0x00 [block start address (u32)] [number of blocks (u32)]
+
+[Block section]
+   [data] [data] [data] [data data]
+~~~~~~~~~~~~~~~
+```
+i dont know how to directory but i guess i could just duplicate one of these and make it its own file or something hhaha
+
+reminder i dont know what im doing
+:3

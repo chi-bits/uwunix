@@ -24,7 +24,7 @@ impl Cpu {
             ram: [0; 0xffff],
             port: iocat::Port {
                 rw: false,
-                deviceaddr: 0x0000,
+                devaddr: 0x0000,
                 byte: 0x00,
             }
         }
@@ -47,6 +47,6 @@ impl Cpu {
     }
 
     fn clock(&mut self) {
-        
+        // self.port.byte = 
     }
 }
